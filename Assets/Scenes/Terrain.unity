@@ -563,13 +563,13 @@ MonoBehaviour:
   m_SelectActionTrigger: 0
   m_HideControllerOnSelect: 0
   m_AllowHoveredActivate: 0
-  m_PlayAudioClipOnSelectEntered: 0
+  m_PlayAudioClipOnSelectEntered: 1
   m_AudioClipForOnSelectEntered: {fileID: 0}
   m_PlayAudioClipOnSelectExited: 0
   m_AudioClipForOnSelectExited: {fileID: 0}
   m_PlayAudioClipOnSelectCanceled: 0
   m_AudioClipForOnSelectCanceled: {fileID: 0}
-  m_PlayAudioClipOnHoverEntered: 0
+  m_PlayAudioClipOnHoverEntered: 1
   m_AudioClipForOnHoverEntered: {fileID: 0}
   m_PlayAudioClipOnHoverExited: 0
   m_AudioClipForOnHoverExited: {fileID: 0}
@@ -1084,13 +1084,13 @@ MonoBehaviour:
   m_SelectActionTrigger: 0
   m_HideControllerOnSelect: 0
   m_AllowHoveredActivate: 0
-  m_PlayAudioClipOnSelectEntered: 0
+  m_PlayAudioClipOnSelectEntered: 1
   m_AudioClipForOnSelectEntered: {fileID: 0}
   m_PlayAudioClipOnSelectExited: 0
   m_AudioClipForOnSelectExited: {fileID: 0}
   m_PlayAudioClipOnSelectCanceled: 0
   m_AudioClipForOnSelectCanceled: {fileID: 0}
-  m_PlayAudioClipOnHoverEntered: 0
+  m_PlayAudioClipOnHoverEntered: 1
   m_AudioClipForOnHoverEntered: {fileID: 0}
   m_PlayAudioClipOnHoverExited: 0
   m_AudioClipForOnHoverExited: {fileID: 0}
@@ -2494,15 +2494,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600140572}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 136.9, z: 51.8}
+  m_LocalRotation: {x: 0.20853867, y: -0.5393772, z: 0.13994692, w: 0.80374044}
+  m_LocalPosition: {x: 2113, y: 621, z: 437}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 411028084}
   m_Father: {fileID: 974008134}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 29.091, y: -67.73, z: 0}
 --- !u!114 &1600140574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2938,7 +2938,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 1000
+  far clip plane: 3000
   field of view: 60
   orthographic: 0
   orthographic size: 5
