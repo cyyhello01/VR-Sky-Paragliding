@@ -23,6 +23,7 @@ public class ParagliderController : MonoBehaviour
         // Get references to the Rigidbody and Collider components
         rb = GetComponent<Rigidbody>();
         collider = GetComponent<CapsuleCollider>();
+        rb.useGravity = true;
     }
 
     void Update()
