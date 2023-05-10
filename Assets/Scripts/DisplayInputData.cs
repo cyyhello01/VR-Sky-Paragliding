@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class DisplayInputData : MonoBehaviour
 {
     public InputData inputData;
-    public GameObject pauseMenu;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -37,13 +37,6 @@ public class DisplayInputData : MonoBehaviour
             Debug.Log("Left Grip button is pressed.");
         }
 
-        if (inputData.leftController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.secondaryButton, out bool yButtonValue))
-        {
-            Debug.Log("Left Y button is pressed.");
-            pauseMenu.SetActive(true);
-            //open pause menu
-        }
-
         if (inputData.leftController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.devicePosition, out Vector3 leftPosition))
         {
             Debug.Log("Left controller is moving at: " + leftPosition);
@@ -68,12 +61,6 @@ public class DisplayInputData : MonoBehaviour
         if (inputData.rightController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.gripButton, out bool rightGripValue))
         {
             Debug.Log("Right Grip button is pressed.");
-        }
-
-        if (inputData.rightController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.secondaryButton, out bool bButtonValue))
-        {
-            Debug.Log("Right B button is pressed.");
-            //open pause menu
         }
 
         if (inputData.rightController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.devicePosition, out Vector3 rightPosition))
