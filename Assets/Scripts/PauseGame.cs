@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class PauseGame : MonoBehaviour
 {
     public bool gamePaused = false;
     public GameObject pauseMenu;
-    public InputData inputData;
     public Button resumeButton;
+
+    private InputData inputData;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +28,7 @@ public class PauseGame : MonoBehaviour
     public void clickedPause()
     {
         //press left controller Y button
-        if (Input.GetButtonDown("Fire1") )
-        //if (inputData.leftController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.secondaryButton, out bool yButtonValue))
+        if (inputData.leftController.TryGetFeatureValue(CommonUsages.secondaryButton, out bool yButtonValue))
         {
             Debug.Log("Left Y button is pressed.");
             if (gamePaused == false)

@@ -2419,7 +2419,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gamePaused: 0
   pauseMenu: {fileID: 30466967}
-  inputData: {fileID: 320128964}
   resumeButton: {fileID: 0}
 --- !u!1 &498912119
 GameObject:
@@ -3648,6 +3647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1191740760}
   - component: {fileID: 1191740761}
+  - component: {fileID: 1191740762}
   m_Layer: 0
   m_Name: InputData
   m_TagString: Untagged
@@ -3682,7 +3682,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d743f02accad8504f87a44e80dff2e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputData: {fileID: 320128964}
+  cam: {fileID: 0}
+  leftVelocityDisplay: {fileID: 0}
+  rightVelocityDisplay: {fileID: 0}
+--- !u!114 &1191740762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191740758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad852a50efe93c243ae00ced42b4cc1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1200760410
 GameObject:
   m_ObjectHideFlags: 0
@@ -5603,6 +5617,7 @@ GameObject:
   - component: {fileID: 2065957124}
   - component: {fileID: 2065957123}
   - component: {fileID: 2065957122}
+  - component: {fileID: 2065957126}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5782,6 +5797,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &2065957126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065957120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d2a22bc0fa89d488b90672a57e11b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAngle: 10
 --- !u!1 &2120914361
 GameObject:
   m_ObjectHideFlags: 0
