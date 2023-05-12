@@ -59,9 +59,9 @@ public class CameraController : MonoBehaviour
         }
 
         //Move the camera forward, backward
-        //Vector3 s = transform.forward * 20 * speed * Time.deltaTime;
-        //transform.position += s;
-        //Debug.Log("Speed: " + s);
+        Vector3 s = transform.forward * 10 * speed * Time.deltaTime;
+        transform.position += s;
+        Debug.Log("Speed: " + s);
 
     }
 }
