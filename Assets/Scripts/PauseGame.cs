@@ -8,7 +8,6 @@ public class PauseGame : MonoBehaviour
 {
     public bool gamePaused = false;
     public GameObject pauseMenu;
-    public Button resumeButton;
 
     private InputData inputData;
 
@@ -21,16 +20,16 @@ public class PauseGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        clickedPause();
-       
-    }
-
-    public void clickedPause()
-    {
         //press left controller Y button
         if (inputData.leftController.TryGetFeatureValue(CommonUsages.secondaryButton, out bool yButtonValue))
         {
             Debug.Log("Left Y button is pressed.");
+            clickedPause();
+        }
+    }
+
+    public void clickedPause()
+    {
             if (gamePaused == false)
             {
                 Time.timeScale = 0; //freeze time
@@ -44,7 +43,5 @@ public class PauseGame : MonoBehaviour
                 Time.timeScale = 1; //unfreeze time
             }
 
-
-        }
     }
 }

@@ -17,8 +17,17 @@ public class LoadScene : MonoBehaviour
         
     }
 
-    public void ReloadCurrentScene()
+    public void RestartGame()
     {
-        SceneManager.LoadScene(0);
+        StartGame();
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void ExitGame()
+    {
+       Application.Quit();
     }
 }
