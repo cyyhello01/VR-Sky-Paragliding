@@ -31,7 +31,7 @@ public class PauseGame : MonoBehaviour
     public void clickedPause()
     {
             if (gamePaused == false)
-            {
+            { 
                 Time.timeScale = 0; //freeze time
                 gamePaused = true;
                 pauseMenu.SetActive(true); //open pause menu
