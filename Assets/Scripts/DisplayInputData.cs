@@ -10,14 +10,27 @@ public class DisplayInputData : MonoBehaviour
     public GameObject cam;
     public TextMeshProUGUI leftVelocityDisplay;
     public TextMeshProUGUI rightVelocityDisplay;
+    float rotateAngle = 10.0f;
 
     private InputData inputData;
+
+    public float Sensitivity
+    {
+        get { return sensitivity; }
+        set { sensitivity = value; }
+    }
+    [Range(0.1f, 9f)][SerializeField] float sensitivity = 2f;
+    [Tooltip("Limits vertical camera rotation. Prevents the flipping that happens when rotation goes above 90.")]
+    [Range(0f, 90f)][SerializeField] float yRotationLimit = 88f;
+
+    Vector2 rotation = Vector2.zero;
+
 
     // Start is called before the first frame update
     void Start()
     {
         inputData = GetComponent<InputData>();
-        //Camera cam1 = cam.GetComponent<Camera>();
+        cam = GetComponent<GameObject>();
     }
 
     // Update is called once per frame
@@ -26,32 +39,24 @@ public class DisplayInputData : MonoBehaviour
         //'deviceVelocity' is the input data we get from left controller, and stored it into vector3
         //device velocity = one of the data inputs
         //can replace it with other data inputs, ex: position, rotation
-        if (inputData.leftController.TryGetFeatureValue(CommonUsages.deviceVelocity, out Vector3 leftVelocity))
+        if (inputData.leftController.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 turnLeft))
         {
             Debug.Log("left controller is moving");
-            leftVelocityDisplay.text = leftVelocity.magnitude.ToString("F2");//second decimal point
-            if (leftVelocity.x < 0)
-            {
-                Debug.Log("move cam position");
-                if (leftVelocity.y < 0)
-                {
-                    float rotateSpeed = 2.0f;
-                    //float rotation = rotateSpeed;
-                    //Vector3 rotation = new Vector3(0, leftVelocity);
-                    cam.transform.position += leftVelocity;
-                }
-              
+            leftVelocityDisplay.text = turnLeft.x.ToString("F2");//second decimal point
 
-            }
+            rotation.x += turnLeft.x * sensitivity;
+            var xQuat = Quaternion.AngleAxis(rotation.x, Vector3.up);
+            transform.localRotation = xQuat;
+
         }
-        if (inputData.rightController.TryGetFeatureValue(CommonUsages.deviceVelocity, out Vector3 rightVelocity))
+        if (inputData.rightController.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 turnRight))
         {
             Debug.Log("right controller is moving");
-            rightVelocityDisplay.text = rightVelocity.magnitude.ToString("F2");
-            if (leftVelocity.x < 0)
+            rightVelocityDisplay.text = turnRight.x.ToString("F2");
+            if (turnRight.x > 0)
             {
                 Debug.Log("move cam position");
-                cam.transform.position += rightVelocity;
+                //cam.transform.position += turnRight;
 
             }
         }
