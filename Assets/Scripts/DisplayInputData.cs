@@ -10,8 +10,7 @@ public class DisplayInputData : MonoBehaviour
     public GameObject cam;
     public TextMeshProUGUI leftVelocityDisplay;
     public TextMeshProUGUI rightVelocityDisplay;
-    float rotateAngle = 10.0f;
-
+  
     private InputData inputData;
 
     public float Sensitivity
@@ -53,12 +52,9 @@ public class DisplayInputData : MonoBehaviour
         {
             Debug.Log("right controller is moving");
             rightVelocityDisplay.text = turnRight.x.ToString("F2");
-            if (turnRight.x > 0)
-            {
-                Debug.Log("move cam position");
-                //cam.transform.position += turnRight;
-
-            }
+            rotation.x += turnRight.x * sensitivity;
+            var xQuat = Quaternion.AngleAxis(rotation.x, Vector3.up);
+            transform.localRotation = xQuat;
         }
 
 
