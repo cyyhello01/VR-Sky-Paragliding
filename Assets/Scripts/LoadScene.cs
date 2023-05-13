@@ -5,16 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
+    //public Animator cutsceneAnim;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //cutsceneAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void RestartGame()
@@ -24,7 +30,9 @@ public class LoadScene : MonoBehaviour
 
     public void StartGame()
     {
+        
         SceneManager.LoadScene(1);
+        //cutsceneAnim.SetTrigger("FadeToBlack");
     }
     public void ExitGame()
     {

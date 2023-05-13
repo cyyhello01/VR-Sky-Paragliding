@@ -5,6 +5,8 @@ using TMPro;
 
 public class CameraCollision : MonoBehaviour
 {
+    public TextMeshProUGUI alertMsg;
+    public GameObject gameOverMenu;
     public AudioSource checkpointSound;
     public TextMeshProUGUI getPointText;
     int checkpoint = 0;
@@ -18,7 +20,8 @@ public class CameraCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //getPointText.enabled = false;
+        getPointText.enabled = false;
+        gameOverMenu.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,9 +35,14 @@ public class CameraCollision : MonoBehaviour
             checkpointSound.Play();
         }
 
-        if (other.gameObject.tag == "Mountain")
-        {
+        
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Mountain")
+        {
+            gameOverMenu.gameObject.SetActive(true);
         }
     }
 }

@@ -20,12 +20,14 @@ public class PauseGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //press left controller Y button
-        if (inputData.leftController.TryGetFeatureValue(CommonUsages.secondaryButton, out bool yButtonValue))
+        ////press left controller Y button
+        if (inputData.rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool yButtonValue))
         {
             Debug.Log("Left Y button is pressed.");
             clickedPause();
-        }
+            
+        }  
+       
     }
 
     public void clickedPause()

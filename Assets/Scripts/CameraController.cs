@@ -6,7 +6,7 @@ using UnityEngine.XR;
 [RequireComponent(typeof(InputData))]
 public class CameraController : MonoBehaviour
 {
-    public float windSpeed = 100.0f;
+    public int windSpeed = 10;
     public float initialSpeed = 1.0f;
     float speed = 5.0f;
 
@@ -60,9 +60,11 @@ public class CameraController : MonoBehaviour
         }
 
         //Move the camera forward, backward
-        Vector3 s = transform.forward * 10 * speed * Time.deltaTime;
+        Vector3 s = transform.forward * windSpeed * speed * Time.deltaTime;
         transform.position += s;
         Debug.Log("Speed: " + s);
 
     }
+
+    
 }
