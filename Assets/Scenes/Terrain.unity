@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0896621, g: 0.07283002, b: 0.14550325, a: 1}
+  m_IndirectSpecularColor: {r: 0.08966261, g: 0.07283014, b: 0.14550357, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10899,7 +10899,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f5a24a380916d14db9775daab4fe333, type: 3}
@@ -11762,6 +11762,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Paraglider
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1579298d1d0f7f4fb739f1ae960742b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1579298d1d0f7f4fb739f1ae960742b, type: 3}
