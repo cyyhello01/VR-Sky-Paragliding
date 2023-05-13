@@ -1,26 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CameraCollision : MonoBehaviour
 {
-    bool isCollide = false;
+    public AudioSource checkpointSound;
+    public TextMeshProUGUI getPointText;
+    int checkpoint = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        checkpointSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //getPointText.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isCollide)
+        if (other.gameObject.tag == "Circle")
+        {
+            checkpoint += 1;
+            other.gameObject.SetActive(false); //if collide with the circle, disable the circle
+            getPointText.text = "You get " + checkpoint + "checkpoint(s)";
+            getPointText.enabled = true; 
+            checkpointSound.Play();
+        }
+
+        if (other.gameObject.tag == "Mountain")
         {
 
         }

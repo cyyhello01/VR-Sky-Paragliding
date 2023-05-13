@@ -19,7 +19,8 @@ public class CameraController : MonoBehaviour
         set { sensitivity = value; }
     }
     [Range(0.1f, 9f)][SerializeField] float sensitivity = 2f;
-
+    //[Tooltip("Limits vertical camera rotation. Prevents the flipping that happens when rotation goes above 90.")]
+    //[Range(0f, 90f)][SerializeField] float yRotationLimit = 88f;
     Vector2 rotation = Vector2.zero;
 
 
